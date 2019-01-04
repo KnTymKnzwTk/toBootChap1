@@ -3,9 +3,9 @@ package com.example.prep.controller.home;
 import com.example.prep.service.home.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
@@ -18,9 +18,9 @@ public class HomeController {
     HomeService homeService;
 
     @GetMapping("home")
-    public String index(Model model) {
-        HomeForm form = homeService.getDefaultValue();
-        model.addAttribute("form", form);
-        return "home";
+    public ModelAndView index(ModelAndView mav) {
+        mav.addObject("form", homeService.getDefaultValue());
+        mav.setViewName("home");
+        return mav;
     }
 }
