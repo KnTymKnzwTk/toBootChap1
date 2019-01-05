@@ -2,6 +2,7 @@ package com.example.prep.service.home;
 
 import com.example.prep.controller.home.HomeForm;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 @Service
 public class HomeServiceImpl implements HomeService{
@@ -12,5 +13,5 @@ public class HomeServiceImpl implements HomeService{
         form.setStrawberry("いちご");
 
         return form;
-    };
+    }
 }
