@@ -11,7 +11,7 @@ import java.util.List;
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public String getHello() {
         return "hello";
